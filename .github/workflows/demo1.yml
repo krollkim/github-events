@@ -3,7 +3,18 @@ on:
   pull_request:
     types:
       - opened
+    branches:
+      - main #main
+      - 'dev-*' #example
+      - 'feat/**' #example
   workflow_dispatch:
+  push:
+    branches:
+      - main #main
+      - 'dev-*' #example
+      - 'feat/**' #example
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: windows-latest
